@@ -188,3 +188,29 @@ Migrating to CreatePosts (20200817233402)
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/aymak91/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for ::1 at 2020-08-17 21:39:49 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/aymak91/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started GET "/" for ::1 at 2020-08-17 21:39:50 -0700
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/7b946d0e23b745e3/variables" for ::1 at 2020-08-17 21:39:51 -0700
+Started GET "/" for ::1 at 2020-08-17 21:41:07 -0700
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/e4127a0488766925/variables" for ::1 at 2020-08-17 21:41:07 -0700
+Started GET "/" for ::1 at 2020-08-17 21:41:08 -0700
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/4340edacbcf554f5/variables" for ::1 at 2020-08-17 21:41:08 -0700
+Started GET "/" for ::1 at 2020-08-17 21:41:09 -0700
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/5dfb2c2a21ceb5b7/variables" for ::1 at 2020-08-17 21:41:09 -0700
