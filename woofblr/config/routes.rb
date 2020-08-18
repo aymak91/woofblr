@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :users
-    resources :follows, only: [:create, :destroy, :show]
-    resources :likes, only: [:create, :destroy]
-    resources :reblogs, only: [:create, :destroy]
+    # resources :follows, only: [:create, :destroy, :show]
+    # resources :likes, only: [:create, :destroy]
+    # resources :reblogs, only: [:create, :destroy]
 
-    resources :session, only: [:create, :destroy, :show]
+    resources :session, only: [:create, :destroy]
   end
 end
