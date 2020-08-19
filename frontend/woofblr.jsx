@@ -4,8 +4,19 @@ import configureStore from './store/store';
 import Root from './components/root'
 
 document.addEventListener("DOMContentLoaded", () => {
-  const store = configureStore();
+  let store = configureStore();
   const root = document.getElementById("root");
+
+  let preloadedState = undefined;
+
+  if (window.currentUser) {
+    preloadedState = {
+      session: {
+        currentUser: window.currentUser
+      }
+    };
+    store = configureStore(preloadedState)
+  }
 
   // FOR TESTING ONLY
   window.store = store;

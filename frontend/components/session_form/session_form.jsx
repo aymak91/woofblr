@@ -38,42 +38,45 @@ class SessionForm extends React.Component {
         if (this.props.formType === "Sign Up") {
             
             usernameField = ( <input 
-                className=""
+                className="field"
                 type="text" 
                 value={this.state.username} 
                 placeholder="Username" 
                 onChange={this.handleInput("username")} 
             /> );
 
-            userLink = (<Link to='/login'>Log in</Link>)
+            userLink = (<Link className="link" to='/login'>Log in</Link>)
         } else {
             usernameField = (<span></span>)
-            userLink = (<Link to='/signup'>Sign up</Link>)
+            userLink = (<Link className="link" to='/signup'>Sign up</Link>)
         }
 
 
         return (
-            <div>
+            <div className="session-form">
                 {userLink}
-                <h1>woofblr</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <input 
-                        className=''
-                        type="text" 
-                        name={this.state.email} 
-                        placeholder="Email"
-                        onChange={this.handleInput('email')}
-                    />
-                    <input 
-                        className=''
-                        type="password" 
-                        value={this.state.password} 
-                        placeholder="Password"
-                        onChange={this.handleInput('password')}
-                    />                    
-                    {usernameField}
-                    <input type="submit" value={this.props.formType} />
-                </form>
+                <div className="form-container">
+                    <form className="form" onSubmit={this.handleSubmit}>
+                        <h1 className="title" >woofblr</h1>
+                        <input 
+                            className='field'
+                            type="text" 
+                            name={this.state.email} 
+                            placeholder="Email"
+                            onChange={this.handleInput('email')}
+                        />
+                        <input 
+                            className='field'
+                            type="password" 
+                            value={this.state.password} 
+                            placeholder="Password"
+                            onChange={this.handleInput('password')}
+                        />                    
+                        {usernameField}
+                        
+                        <input className="submit" type="submit" value={this.props.formType} />
+                    </form>
+                </div>
             </div>
         );
     }

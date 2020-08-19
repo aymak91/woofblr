@@ -13,8 +13,11 @@ class Index extends React.Component {
     render() {
         return (
             <div className="index">
-                <Link className="" to='/signup'>Get Started</Link>
-                <Link className="" to='/login'>Log In</Link>
+                    <nav className="links">               
+                        <h1 className="title">woofblr</h1>
+                        <Link className="signup" to='/signup'>Get Started</Link><br />
+                        <Link className="login" to='/login'>Log In</Link>
+                    </nav>
                 {/* test */}
             </div>
         );

@@ -4,15 +4,15 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import IndexContainer from './index/index_container';
 import DashboardContainer from './dashboard/dashboard_container';
-
+import {AuthRoute, ProtectedRoute} from '../util/route_utils';
 
 const App = () => {
     return(
     <div>
-        <Route exact path="/" component={IndexContainer}/>
-        <Route path="/signup" component={SignUpFormContainer}/>
-        <Route path="/login" component={LoginFormContainer}/>
-        <Route path="/dashboard" component={DashboardContainer}/>
+        <AuthRoute exact path="/" component={IndexContainer}/>
+        <AuthRoute path="/signup" component={SignUpFormContainer}/>
+        <AuthRoute path="/login" component={LoginFormContainer}/>
+        <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
 
     </div>
     )
