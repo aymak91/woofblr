@@ -6,7 +6,7 @@ const mSTP = (state) => ({
       formType: "Sign Up",
 });
 const mDTP = (dispatch) => ({
-     createNewUser: (userForm) => dispatch(createNewUser(userForm)),
+     action: (userForm) => dispatch(createNewUser(userForm)),
 });
 
 export default connect(mSTP, mDTP)(SessionForm);

@@ -7,7 +7,7 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-     createSession: (userForm) => dispatch(createSession(userForm)),
+     action: (userForm) => dispatch(createSession(userForm)),
 });
 
 export default connect(mSTP, mDTP)(SessionForm);

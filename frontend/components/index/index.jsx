@@ -12,8 +12,9 @@ class Index extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="index">
                 <Link className="" to='/signup'>Get Started</Link>
+                <Link className="" to='/login'>Log In</Link>
                 {/* test */}
             </div>
         );
