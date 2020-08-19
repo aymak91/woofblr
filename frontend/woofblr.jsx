@@ -1,9 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-// this is a comment
+import configureStore from './store/store';
+import Root from './components/root'
 
 document.addEventListener("DOMContentLoaded", () => {
+  const store = configureStore();
   const root = document.getElementById("root");
-  ReactDOM.render(<h1>Welcome to Woofblr</h1>, root);
+
+  // FOR TESTING ONLY
+  window.store = store;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  // FOR TESTING ONLY
+
+
+  // ReactDOM.render('ummblr', root);
+  ReactDOM.render(<Root store={ store } />, root);
 });

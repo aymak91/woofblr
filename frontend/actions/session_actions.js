@@ -13,19 +13,19 @@ const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER
 });
 
-export const signup = (userForm) => (dispatch) => {
+export const createNewUser = (userForm) => (dispatch) => {
     return SessionApiUtils.signup(userForm)
         .then( user => dispatch(receiveCurrentUser(user)))
 }
 
 
-export const login = (userForm) => (dispatch) => {
-    return SessionApiUtils.signup(userForm)
+export const createSession = (userForm) => (dispatch) => {
+    return SessionApiUtils.login(userForm)
         .then( user => dispatch(receiveCurrentUser(user)))
 }
 
-export const logout = () => (dispatch) => {
-    return SessionApiUtils.signup()
+export const deleteSession = () => (dispatch) => {
+    return SessionApiUtils.logout()
         .then( () => dispatch(logoutCurrentUser()))
 }
 
