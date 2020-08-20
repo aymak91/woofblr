@@ -8,13 +8,12 @@ import {AuthRoute, ProtectedRoute} from '../util/route_utils';
 
 const App = () => {
     return(
-    <div>
-        <AuthRoute exact path="/" component={IndexContainer}/>
-        <AuthRoute path="/signup" component={SignUpFormContainer}/>
-        <AuthRoute path="/login" component={LoginFormContainer}/>
-        <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
-
-    </div>
+        <Switch>
+            <AuthRoute path="/signup" component={SignUpFormContainer}/>
+            <AuthRoute path="/login" component={LoginFormContainer}/>
+            <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
+            <AuthRoute path="/" component={IndexContainer}/>
+        </Switch>
     )
 }
 

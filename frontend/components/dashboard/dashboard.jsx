@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { deleteSession } from '../../actions/session_actions';
-
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -17,11 +15,13 @@ class Dashboard extends React.Component {
             <div>
                 <h1>This is the dashboard</h1>
                 <Link to='/'>
-                    <button onClick={deleteSession}>Logout</button>
+                    <button onClick={this.props.deleteSession}>Logout</button>
                 </Link>
             </div>
         );
     }
 }
+
+
 
 export default Dashboard;
