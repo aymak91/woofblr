@@ -16,6 +16,10 @@ class User < ApplicationRecord
     validates :username, :email, :session_token, uniqueness: true
     validates :password, length: {minimum: 6}, allow_nil: true
 
+    has_many :posts,
+        foreign_key: :author_id,
+        class_name: :Post
+
 
     
     attr_reader :password

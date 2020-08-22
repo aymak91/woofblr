@@ -13,12 +13,14 @@ class Index extends React.Component {
     render() {
         return (
             <div className="index">
+                <div className="link-invis" />
+                <div className="index-container">
                     <nav className="links">               
-                        <h1 className="title">woofblr</h1>
+                        <h1 className="title"><Link className="title-link" to="/">woofblr</Link></h1>
                         <Link className="signup" to='/signup'>Get Started</Link><br />
                         <Link className="login" to='/login'>Log In</Link>
                     </nav>
-                {/* test */}
+                </div>
             </div>
         );
     }

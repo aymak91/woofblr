@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PostIndexContainer from '../posts/post_index_container';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -13,10 +14,13 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
-                <h1>This is the dashboard</h1>
                 <Link to='/'>
                     <button onClick={this.props.deleteSession}>Logout</button>
                 </Link>
+                <h1>This is the dashboard</h1>
+                <div>
+                    <PostIndexContainer />
+                </div>
             </div>
         );
     }

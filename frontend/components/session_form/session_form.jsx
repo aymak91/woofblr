@@ -31,13 +31,43 @@ class SessionForm extends React.Component {
             .then( () => this.props.history.push('/dashboard'));
     };
 
-    handleDemo(e){
+    handleDemo(e) {
         e.preventDefault();
-        this.props.createSession({
+        const demoUser = {            
             email: "demo@woof.com",
             password: "password",
-            username: "demoDoge"
-        });
+            username: "demoDoge"}
+
+        let { email, password } = demoUser;
+        let interval = 150;
+        let login = () => {
+            this.props.createSession(this.state);
+            this.props.history.push("/")
+        };
+        let fillPassword = () => {
+            let inputPassword = setInterval(() => {
+                if (this.state.password !== password) {
+                    let tempPassword = password.slice(0, this.state.password.length + 1);
+                    this.setState({ password: tempPassword });
+                } else {                    
+                    clearInterval(inputPassword);
+                    login();
+                }
+            }, interval);
+        };        
+        
+        if (this.state.email !== email) {
+            let inputEmail = setInterval(() => {
+                if (this.state.email !== email) {
+                    let tempEmail = email.slice(0, this.state.email.length + 1);
+                    this.setState({ email: tempEmail });
+                } else {                    
+                    clearInterval(inputEmail);
+                    fillPassword();
+                }
+            }, interval);
+        }
+
     }
 
     renderErrors() {
@@ -56,7 +86,6 @@ class SessionForm extends React.Component {
 
         let usernameField;
         let userLink;
-        let demoLogin;
 
         if (this.props.formType === "Sign Up") {
             
@@ -66,47 +95,46 @@ class SessionForm extends React.Component {
                 value={this.state.username} 
                 placeholder="Username" 
                 onChange={this.handleInput("username")} 
-            /> 
-            
-            );
+            /> );
 
             userLink = (<Link className="link" to='/login'>Log in</Link>)
-            demoLogin = (<span></span>)
-
         } else {
             usernameField = (<span></span>)
             userLink = (<Link className="link" to='/signup'>Sign up</Link>)
-            demoLogin = (<button onClick={this.handleDemo}>Demo Login</button>)
         };
 
 
         return (
             <div className="session-form">
                 {userLink}
+                <h1 className="title-session"><Link className="title-link" to="/">woofblr</Link></h1>
                 <div className="form-container">
                     <form className="form" onSubmit={this.handleSubmit}>
-                        <h1 className="title" >woofblr</h1>
-                        <input 
-                            className='field'
-                            type="text" 
-                            name={this.state.email} 
-                            placeholder="Email"
-                            onChange={this.handleInput('email')}
-                        />
-                        <input 
-                            className='field'
-                            type="password" 
-                            value={this.state.password} 
-                            placeholder="Password"
-                            onChange={this.handleInput('password')}
-                        />                        
-                        {usernameField}
-                        <input className="submit" type="submit" value={this.props.formType} />
-                        {demoLogin}
+                        <div className="fields">
+                            <input 
+                                className='field'
+                                type="text" 
+                                value={this.state.email} 
+                                placeholder="Email"
+                                onChange={this.handleInput('email')}
+                            />
+                            <input 
+                                className='field'
+                                type="password" 
+                                value={this.state.password} 
+                                placeholder="Password"
+                                onChange={this.handleInput('password')}
+                            />
+                            {usernameField}
+                        </div>
                         <ul>
                             {this.renderErrors()}
                         </ul>
                         
+                        <div className="buttons">
+                            <input className="submit" type="submit" value={this.props.formType} />
+                            <button className="submit" onClick={this.handleDemo}>Demo Login</button>
+                        </div>
                     </form>
                 </div>
             </div>
