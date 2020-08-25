@@ -30,5 +30,5 @@ post4 = Post.create(title: '', content: 'Doge coin mining!', post_type: 'photo',
 # post6 =
 # post7 =
 
-doge_mining = open('https://woofblr-dev.s3-us-west-1.amazonaws.com/doge-mining.gif');
-post4.photo.attach(io: doge_mining, filename: 'doge-mining.gif');
+# doge_mining = open('https://woofblr-dev.s3-us-west-1.amazonaws.com/doge-mining.gif');
+# post4.photo.attach(io: doge_mining, filename: 'doge-mining.gif');
