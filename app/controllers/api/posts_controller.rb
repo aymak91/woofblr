@@ -23,8 +23,9 @@ class Api::PostsController < ApplicationController
     end
 
     def index
-        @posts = Post.includes(:likes, :comments, :author).all
-        
+        # CLEAN THIS UP
+        @posts = Post.includes(:author).all
+                # :likes, :comments,
         render :index
     end
 

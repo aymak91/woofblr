@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
-import { NavBar } from './nav_bar';
+import Navbar from './navbar';
 import { deleteSession } from '../../actions/session_actions';
 
 const mSTP = (state) => ({
-     currentUser: state.session.currentUser,
+     currentUser: state.entities.users[state.session.id]
 });
 
 const mDTP = (dispatch) => ({
      deleteSession: () => dispatch(deleteSession()),
+     // openModal: (modal) => dispatch(openModal(modal))
 });
 
-export default connect(mSTP, mDTP)(NavBar);
+export default connect(mSTP, mDTP)(Navbar);
