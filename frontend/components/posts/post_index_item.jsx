@@ -16,7 +16,6 @@ class PostIndexItem extends React.Component {
 
         // switch (post.post_type) {
         //     case "text":
-        console.log('asdfg');
                 return (
                     <div className="text-post">
                         <h3>{this.props.post.title}</h3>
@@ -60,26 +59,27 @@ class PostIndexItem extends React.Component {
     render() {  
         return (
             <div className="post-index-item-container">
-                {/* {photoUrl}
-                <div className="explore post-container">
+                {/* {photoUrl} */} Photo
+                <div className="post-container">
                     <div className="post-author-container">
-                        < UserMini
+                        {/* < UserMini
                             follow={this.props.follow}
                             unfollow={this.props.unfollow}
                             currentUser={this.props.currentUser}
                             otherUser={author}
-                        /> {reblogSymbol} {originalAuthor}
-                    </div> */}
+                        /> {reblogSymbol} {originalAuthor} */}
+                        Mini popup
+                    </div>
                     <div className="post-body-container">
                         {this.postBody()}
                     </div>
-                    {/* <div className="post-action-container">
-                        {notes}
+                    <div className="post-action-container">
+                        {/* {notes} */} Notes here
                         <ul className="post-action-actions">
-                            {settings} 
+                            {/* {settings}  */} Settings
                         </ul>
                     </div>
-                </div> */}
+                </div>
             </div>
         )
     };

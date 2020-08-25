@@ -1,0 +1,186 @@
+.dashboard {
+    /* position: relative; */
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 80px 225px;
+    position: relative;
+    background-color: #34526f;
+}
+
+.dashboard-main {
+    position: relative;
+}
+
+/* .post-nav-container {
+    display: flex;
+    flex-direction: row
+    justify-content: space-between;
+    width: 690px;
+} */
+
+.dashboard-main > div {
+    display: flex;
+    justify-content: space-evenly;
+    /* margin: 30px; */
+    width: 690px;
+    
+}
+
+.post-container {
+    /* display: block; */
+    max-width: 540px;
+    /* height: 300px; */
+    position: relative;
+}
+
+.text-post > h3 {
+    font-size: 36px;
+
+}
+
+.text-post > p {
+    font-size: 14px;
+}
+
+/* avatar */
+
+.post-avatar {
+    position: sticky;
+    width: 64px;
+    height: 64px;
+    /* margin: 0 50px; */
+    border: none;
+    border-radius: 4px;
+    z-index: 500;
+    background-color: black;
+}
+
+.post-index-item-container {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: 690px;
+}
+
+.author-avatar {
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 4px;
+    background-color: black;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 65px;
+    margin-bottom: 20px;
+    /* transform: translate(-140%, 90%); */
+}
+
+.user-popup {
+    display: none;
+    position: absolute;
+}
+
+/* .user-avatar:hover {
+    transform: scale(1.1);
+} */
+
+/* .user-avatar:hover .user-popup {
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    color: black;
+    border-radius: 2px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 20;
+    text-align: center;
+
+} */
+
+.dashboard-side {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.recommended-blogs {
+    position: relative;
+    z-index: 1;
+}
+
+.recommended-blogs > p {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 0px;
+    border-bottom: 2px solid whitesmoke;
+}
+
+.recommended-blogs > li {
+    border-bottom: 1px solid white;
+}
+
+.recommended-blogs > li:last-child {
+    border: none;
+}
+
+.recommended-users {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 16px;
+    
+}
+
+.recommended-users:hover {
+    opacity: 0.7;
+}
+
+.recommended-users > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.other-avatar {
+    width: 37px;
+    height: 37px;
+    /* margin: 0 50px; */
+    border: none;
+    border-radius: 3px;
+    margin-right: 8px;
+    background-color: black;
+}
+
+.follow-button {
+    background: transparent;
+}
+
+.fa-plus-square {
+    font-size: 24px;
+    color: white;
+}
+
+.fa-plus-square:hover {
+    color: rgb(90, 160, 204);
+}
+
+.dashboard-side > .about-me {
+    position: fixed;
+    right: auto;
+    margin: 10px 45px;
+    display: block;
+    text-align: center;
+    
+}
+
+.empty-space {
+    width: 10%;
+}
+

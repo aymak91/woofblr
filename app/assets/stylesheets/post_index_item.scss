@@ -1,0 +1,195 @@
+
+
+.post-container {
+    width: 540px;
+    font-size: 14px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
+    word-wrap: break-word;
+    border-radius: 3px;
+    vertical-align: baseline;
+    transition: all ease .5s;
+    background-color: white;
+}
+
+.post-container:hover {
+    border-radius: 3px 20px 3px 3px;
+    border-style: solid;
+    transition: all ease .5s;
+
+}
+
+.post-author-container {
+    min-height: 20px;
+    padding: 13px 20px 10px 20px;
+}
+
+.follow-button {
+    border: none;
+    padding: 0 1px;
+    margin: 0 7px;
+    font-size: 13px;
+    color: rgb(130, 200, 223);
+    outline: none;
+}
+
+.follow-button:hover {
+    cursor: pointer;
+}
+
+.text-post > h3 {
+    margin: 0 5px 0 0;
+    padding: 5px 18px 0 18px;
+    font-size: 30px;
+    word-wrap: break-word;
+}
+
+.content-post {
+    /* min-height: 21px; */
+    padding: 8px 20px 6px 20px;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.content-author-name {
+    padding: 7px 20px 3px 20px;
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+.reblog-container {
+    border-top: 1px solid lightgray;
+    margin-top: 2px;
+}
+
+.post-action-container {
+    /* height: 45px; */
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: darkgray;
+}
+
+.settings-button {
+    border: none;
+    font-size: 22px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+}
+
+.settings-dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 4px 0;
+    width: 120px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    z-index: 20;
+}
+
+.settings-dropdown > button {
+    border: none;
+    font-size: 14px;
+    padding: 5px 25px 5px 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.settings-dropdown > button:hover {
+    background-color: lightblue;
+}
+
+
+/* quote */
+
+.quote-post {
+    /* margin: 0 30px; */
+    word-wrap: break-word;
+}
+
+.quote-post > h3 {
+    font-family: cursive;
+    font-size: 38px;
+    padding: 0 30px;
+    
+}
+
+.quote-post > p {
+    font-size: 14px;
+    padding: 0 30px;
+    font-style: italic;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.quote-post > p > span {
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    top: 3px;
+}
+
+/* link */
+.link-post {
+    color: black;
+    /* text-align: center; */
+    width: 100%;
+    padding: 5px 20px;
+    /* background-color: rgb(242, 242, 242); */
+    height: 50px;
+}
+
+
+.post-action-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post-action-container > .post-action-actions > li > * {
+    font-size: 22px;
+}
+
+.post-action-container > div > .notes {
+    font-size: 16px;
+}
+
+.fa-retweet {
+    color: coral;
+    /* font-size: 22px; */
+    cursor: pointer;
+}
+
+.fa-comments {
+    color: rgb(91, 216, 91);
+    /* font-size: 22px; */
+    cursor: pointer;
+}
+
+.post-index-like {
+    /* font-size: 22px; */
+    cursor: pointer;
+}
+
+.fa-heart.unclicked {
+    position: relative;
+    color: gray;
+    cursor: pointer;
+}
+
+.fa-heart.clicked {
+    position: relative;
+    cursor: pointer;
+    color: red;
+}
+
+/* .fa-comments {
+    padding: 1px 7px 2px;
+} */
+
+.fa-retweet {
+    padding: 1px 1px 2px;
+}
