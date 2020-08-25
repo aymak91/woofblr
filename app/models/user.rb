@@ -20,7 +20,7 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Post
 
-
+    has_one_attached :avatar
     
     attr_reader :password
     after_initialize :ensure_session_token
