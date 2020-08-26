@@ -24,7 +24,7 @@ class PostIndex extends React.Component {
                         currentUser={this.props.currentUser}
                         // follow={this.props.follow}
                         // unfollow={this.props.unfollow}
-                        // openModal={this.props.openModal}
+                        openModal={this.props.openModal}
                     /> 
                 )
             // }

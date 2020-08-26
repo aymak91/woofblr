@@ -8,8 +8,13 @@ class PostIndexItem extends React.Component {
     constructor(props) {
         super(props);
 
-        this.postBody = this.postBody.bind(this);
+        this.state = {
+            showMenu: false
+        }
 
+        this.postBody = this.postBody.bind(this);
+        this.showMenu = this.showMenu.bind(this);
+        this.closeMenu = this.closeMenu.bind(this);
     }
 
     postBody(post){
@@ -34,7 +39,7 @@ class PostIndexItem extends React.Component {
             case "quote":
                 return (
                     <div className="quote-post">
-                        <h3>{post.title}</h3>
+                        <h3>"{post.title}"</h3>
                         <p className="content-post"><span>-</span> {post.content}</p>
                     </div>
                 )
@@ -46,77 +51,101 @@ class PostIndexItem extends React.Component {
                     link = "http://" + post.title;
                 }
 
-            //     return (
-            //         <div className="text-post">
-            //             <h3 className="link-post"><a  href={link}>{post.title}</a></h3>
-            //             <p className="content-post">{post.content}</p>
-            //         </div>
-            //     )
+                return (
+                    <div className="text-post">
+                        <h3 className="link-post"><a  href={link}>{post.title}</a></h3>
+                        <p className="content-post">{post.content}</p>
+                    </div>
+                )
+        }
+    }
+    
+    
+    postSetting(post){
+        switch (post.post_type) {
+            case "text":
+                return (
+                    <button onClick={() => this.props.openModal('Edit Text Form', post.id)}>Edit</button>
+                )
+            case "photo":
+                return (
+                    <button onClick={() => this.props.openModal('Edit Photo Form', post.id)}>Edit</button>
+                )
+            case "quote":
+                return (
+                    <button onClick={() => this.props.openModal('Edit Quote Form', post.id)}>Edit</button>
+                )
+            case "link":
+                return (
+                    <button onClick={() => this.props.openModal('Edit Link Form', post.id)}>Edit</button>
+                )
+        }
+    }
+
+    showMenu(e) {
+        e.preventDefault();
+        this.setState({ showMenu: true }, () => {
+            document.addEventListener('click', this.closeMenu)
+        });
+    }
+
+    closeMenu(e) {
+        if (this.dropdownMenu && !this.dropdownMenu.contains(event.target)) {
+            this.setState({ showMenu: false }, () => {
+                document.removeEventListener('click', this.closeMenu);
+            });  
         }
     }
 
 
     render() {  
         const post = this.props.post;
+        const currentUser = this.props.currentUser;
 
 
-        let photoUrl;    
-        if (this.props.post.author.photoUrl) {
+        // let photoUrl;    
+        // if (this.props.post.author.photoUrl) {
             
-            photoUrl = 
-                <Avatar 
-                    photoUrl={this.props.post.author.photoUrl} 
-                    klass={"author-avatar"}
-                    user={this.props.post.author}
-                    follow={this.props.follow}
-                    unfollow={this.props.unfollow}
-                    currentUser={currentUser}
-                />
-        } else {
-            photoUrl = <img className="author-avatar" src={window.brentURL}></img>
-        }
-
-
-        // let settings;
-        // if (this.props.currentUser.id === this.props.authorId) {
-        //     settings = (
-        //         <li>
-        //             <button className="settings-button" onClick={this.showMenu}>
-        //                 <i className="fas fa-cog"></i>
-        //             </button>
-
-        //             {this.state.showMenu
-        //                 ? (
-        //                     <div className="settings-dropdown" ref={(element) => { this.dropdownMenu = element }}>
-        //                         {this.postSetting(post)}
-        //                         <button onClick={() => this.props.deletePost(post.id)}>Delete</button>
-        //                     </div>
-        //                 )
-        //                 : (null)
-        //             }
-        //         </li>
-        //     )
+        //     photoUrl = 
+        //         <Avatar 
+        //             photoUrl={this.props.post.author.photoUrl} 
+        //             klass={"author-avatar"}
+        //             user={this.props.post.author}
+        //             follow={this.props.follow}
+        //             unfollow={this.props.unfollow}
+        //             currentUser={currentUser}
+        //         />
         // } else {
-        //     settings = (
-        //         <li>
-        //             <button className="" onClick={this.showCommentForm}>
-        //                 <i className="fas fa-comments"></i>
-        //             </button>
+        //     photoUrl = <img className="author-avatar" src={window.brentURL}></img>
+        // }
 
-        //             {this.state.showCommentForm
-        //                 ? (
-        //                     <div className="comments-dropdown" ref={(element) => { this.dropdownCommentForm = element }}>
-        //                         {<CommentForm postId={this.props.post.id} closeCommentForm={this.closeCommentForm} />}
-        //                         <ul>{comments}</ul>
-        //                     </div>
-        //                 )
-        //                 : (null) 
-        //             }
-        //             <i className="fas fa-retweet" onClick={() => this.props.openModal('Create Reblog', this.props.post.id)}></i>
-        //             {likeBtn}
-        //         </li>
-        //         )
-        //     };
+
+        let settings;
+        if (this.props.currentUser.id === this.props.authorId) {
+            settings = (
+                <li>
+                    <button className="settings-button" onClick={this.showMenu}>
+                        <i className="fas fa-cog"></i>
+                    </button>
+
+                    {this.state.showMenu
+                        ? (
+                            <div className="settings-dropdown">
+                                {this.postSetting(post)}
+                                <button onClick={() => this.props.deletePost(post.id)}>Delete</button>
+                            </div>
+                        )
+                        : (null)
+                    }
+                </li>
+            )
+        } else {
+            settings = (
+                <li>
+                    {/* {likeBtn} */} Like Button
+                </li>
+                )
+            };
 
         return (
             <div className="post-index-item-container">
@@ -137,7 +166,7 @@ class PostIndexItem extends React.Component {
                     <div className="post-action-container">
                         {/* {notes} */} Notes here
                         <ul className="post-action-actions">
-                            {/* {settings}  */} Settings
+                            {settings} 
                         </ul>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ import { closeModal } from '../../actions/modal_actions';
 import CreatePostContainer from '../posts/create_post_form_container';
 // import NavbarContainer from '../navbar/navbar_container';
 // import CreatePostModalContainer from '../navbar/create_post_modal_container';
-// import EditPostContainer from '../posts/edit_post_form_container';
+import EditPostContainer from '../posts/edit_post_form_container';
 import CreatePhotoPostContainer from '../posts/create_photo_form_container';
 // import EditPhotoPostContainer from '../posts/edit_photo_form_container';
 import CreateQuoteContainer from '../posts/create_quote_form_container';
@@ -28,9 +28,9 @@ const Modal = ({modal, closeModal}) => {
         case 'Create Text Form':
             component = <CreatePostContainer postType="text" />;
             break;
-        // case 'Edit Text Form':
-        //     component = <EditPostContainer postId={modal.postId} />;
-        //     break;
+        case 'Edit Text Form':
+            component = <EditPostContainer postId={modal.postId} />;
+            break;
         case 'Create Photo Form':
             component = <CreatePhotoPostContainer />
             break;
@@ -69,7 +69,7 @@ const Modal = ({modal, closeModal}) => {
             return null;
     }
     return (
-        <div className="modal-background">
+        <div className="modal-background" onClick={() => closeModal()}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
                 { component }
             </div>
