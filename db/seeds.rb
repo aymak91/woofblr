@@ -21,8 +21,8 @@ user3 = User.create(username: 'NoodlePoodle', email: 'noodle@woof.com', password
 user4 = User.create(username: 'SheepHerder', email: 'sheperd@woof.com', password: "password")
 user5 = User.create(username: 'GoldieLox', email: 'goldie@woof.com', password: "password")
 
-# demo_avatar = open('https://woofblr-dev.s3-us-west-1.amazonaws.com/doge.png')
-# demo.avatar.attach(io: demo_avatar, filename: 'doge.png')
+demo_avatar = open('https://woofblr-dev.s3-us-west-1.amazonaws.com/doge.png')
+demo.avatar.attach(io: demo_avatar, filename: 'doge.png')
 
 post1 = Post.create(title: 'Woof World!', content: 'This is my first woof.', post_type: 'text', author_id: demo.id)
 post2 = Post.create(title: 'It was raining cats and dogs', content: 'I stepped in a poodle.', post_type: 'text', author_id: user1.id)
