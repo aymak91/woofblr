@@ -1,5 +1,5 @@
 import React from 'react';
-import PostIndexItem from './post_index_item';
+import PostIndexItemContainer from './post_index_item_container';
 
 class PostIndex extends React.Component {
     constructor(props) {
@@ -17,7 +17,7 @@ class PostIndex extends React.Component {
         let posts = this.props.posts.map(post => {
             // if (followings.includes(post.author_id) || post.author_id === this.props.currentUser.id) {
                 return (
-                    <PostIndexItem
+                    <PostIndexItemContainer
                         key={post.id}
                         post={post}
                         deletePost={this.props.deletePost}

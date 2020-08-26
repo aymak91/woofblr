@@ -1,8 +1,6 @@
 import React from 'react';
 // import Avatar from '../avatar/avatar';
 // import UserMini from '../avatar/user-mini';
-// import Comments from '../comments/comments';
-// import CommentForm from '../comments/comment_form_container';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -67,18 +65,18 @@ class PostIndexItem extends React.Component {
                 return (
                     <button onClick={() => this.props.openModal('Edit Text Form', post.id)}>Edit</button>
                 )
-            case "photo":
-                return (
-                    <button onClick={() => this.props.openModal('Edit Photo Form', post.id)}>Edit</button>
-                )
-            case "quote":
-                return (
-                    <button onClick={() => this.props.openModal('Edit Quote Form', post.id)}>Edit</button>
-                )
-            case "link":
-                return (
-                    <button onClick={() => this.props.openModal('Edit Link Form', post.id)}>Edit</button>
-                )
+            // case "photo":
+            //     return (
+            //         <button onClick={() => this.props.openModal('Edit Photo Form', post.id)}>Edit</button>
+            //     )
+            // case "quote":
+            //     return (
+            //         <button onClick={() => this.props.openModal('Edit Quote Form', post.id)}>Edit</button>
+            //     )
+            // case "link":
+            //     return (
+            //         <button onClick={() => this.props.openModal('Edit Link Form', post.id)}>Edit</button>
+            //     )
         }
     }
 

@@ -18,11 +18,6 @@ const msp = (state, ownProps) => {
     //     followingStatus = currentUser.followings.includes(authorId)
     // };
 
-    // const originalPost = posts[post.reblog_post_id];
-    // const postsArray = Object.values(state.entities.posts);
-    // const reblogs = postsArray.filter(post => post.reblog_post_id === ownProps.post.id)
-    
-    // const comments = Object.values(post.comments);
     
     return ({
         post: post,
@@ -48,8 +43,6 @@ const mdp = (dispatch) => {
         // fetchFollows: (userId) => dispatch(fetchFollows(userId)),
         // likePost: (postId, userId) => dispatch(likePost(postId, userId)),
         // unlikePost: (postId) => dispatch(unlikePost(postId)),
-        // fetchComments: (postId) => dispatch(fetchComments(postId)),
-        // createComment: (comment) => dispatch(createComment(comment))
     });
 }
 

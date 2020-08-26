@@ -32,17 +32,19 @@ export const fetchPosts = () => (dispatch) => {
 };
 
 export const fetchPost = (postId) => (dispatch) => {
-    PostApiUtil.fetchPost(postId)
+    return PostApiUtil.fetchPost(postId)
         .then((post) => dispatch(receivePost(post)));
 };
 
 export const createPost = (post) => (dispatch) => {
-    PostApiUtil.createPost(post)
-        .then((post) => dispatch(receivePost(post.post)));
+    return PostApiUtil.createPost(post)
+        .then((post) => {
+            return dispatch(receivePost(post.post))
+        });
 };
 
 export const updatePost = (post) => dispatch => {
-    PostApiUtil.updatePost(post)
+    return PostApiUtil.updatePost(post)
         .then((post) => dispatch(receivePost(post)));
 };
 
