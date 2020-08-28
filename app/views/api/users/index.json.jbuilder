@@ -1,9 +1,10 @@
-json.user do
-    json.partial! "api/users/user", user: @user
+@users.each do |user|
+    json.set! user.id do
 
-    if @user.avatar.attached?
-        json.photoUrl url_for(@user.avatar)
+        json.partial! "api/users/user", user: user
+        if user.avatar.attached?
+            json.photoUrl url_for(user.avatar)
+        end
+
     end
-
-    
 end
