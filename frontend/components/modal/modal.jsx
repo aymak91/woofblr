@@ -13,8 +13,6 @@ import CreateQuoteContainer from '../posts/create_quote_form_container';
 import EditQuoteContainer from '../posts/edit_quote_form_container';
 import CreateLinkContainer from '../posts/create_link_form_container';
 import EditLinkContainer from '../posts/edit_link_form_container';
-// import CreateReblogContainer from '../posts/reblog_container';
-
 
 // import Avatar from '../avatar/avatar';
 
@@ -49,22 +47,6 @@ const Modal = ({modal, closeModal}) => {
         case 'Edit Link Form':
             component = <EditLinkContainer postId={modal.postId}/>;
             break;
-        // case 'alt-create-post':
-        //     component = <CreatePostModalContainer />
-        //     return (
-        //         <div className="modal-background" onClick={() => closeModal()}>
-        //             <div className="modal-child" onClick={e => e.stopPropagation()}>
-        //                 {component}
-        //             </div>
-        //         </div>
-        //     )
-        //     break;
-        // case 'Create Reblog':
-        //     component = <CreateReblogContainer postId={modal.postId} />
-        //     break;
-        // case 'user show':
-            
-        //     break;
         default:
             return null;
     }

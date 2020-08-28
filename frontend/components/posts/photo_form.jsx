@@ -64,9 +64,8 @@ class PhotoForm extends React.Component {
                     />
                     <label htmlFor="file">
                         <div className="upload-file">
-                            <p><i className="fas fa-camera-retro"></i></p>
+                            <p><i class="fas fa-paw"></i></p>
                             <p>Upload a photo</p>
-                            <p><i className="far fa-laugh-squint"></i></p>
                         </div>
 
                     </label>
@@ -78,7 +77,7 @@ class PhotoForm extends React.Component {
                     type="text"
                     value={this.state.content}
                     onChange={this.handleInput("content")}
-                    placeholder="Add a caption (optional)"
+                    placeholder="Add a caption"
                 />
             )
 

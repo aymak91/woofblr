@@ -68,7 +68,6 @@ class Dashboard extends React.Component {
                     />
                 </div>                
                 <div className="dashboard">
-
                     <div>
                         <PostIndexContainer />
                     </div>
@@ -76,10 +75,8 @@ class Dashboard extends React.Component {
                         <ul className="recommended-blogs"> <p>Recommended Blogs</p>
                             {recommended}
                         </ul>
-                    </div>                    
+                    </div>
                 </div>
-
-
             </div>
         );
     }
