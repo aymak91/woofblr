@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItemContainer from '../posts/post_index_item_container';
+import NavbarContainer from '../navbar/navbar_container';
 
 class LikesIndex extends React.Component {
     constructor(props) {
@@ -32,11 +33,13 @@ class LikesIndex extends React.Component {
 
         
         return (
-            <div className="main-content">
-                <ul className="posts-container">
-                    test
-                    {posts}
-                </ul>
+            <div className="main">
+                <NavbarContainer />
+                <div className="main-content">
+                    <ul className="">
+                        {posts}
+                    </ul>
+                </div>
             </div>
         )
     }

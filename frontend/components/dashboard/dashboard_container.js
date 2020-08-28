@@ -7,7 +7,7 @@ import { follow, unfollow } from '../../actions/entities/follow_actions';
 
 
 const mSTP = (state) => ({
-     currentUser: state.session.currentUser,    
+     currentUser: state.entities.users[state.session.id],    
      posts: Object.values(state.entities.posts),
      allPosts: state.entities.posts,
      allUsers: Object.values(state.entities.users),

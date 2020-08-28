@@ -1,6 +1,7 @@
 import React from 'react';
-// import Avatar from '../avatar/avatar';
-// import UserMini from '../avatar/user-mini';
+import Avatar from '../avatar/avatar';
+import UserMini from '../avatar/user_mini';
+
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -99,23 +100,25 @@ class PostIndexItem extends React.Component {
     render() {  
         const post = this.props.post;
         const currentUser = this.props.currentUser;
+        const author = this.props.post.author;
+        let likes = <div></div>;
+        let likers = post.likers.length;
 
-
-        // let photoUrl;    
-        // if (this.props.post.author.photoUrl) {
+        let photoUrl;    
+        if (this.props.post.author.photoUrl) {
             
-        //     photoUrl = 
-        //         <Avatar 
-        //             photoUrl={this.props.post.author.photoUrl} 
-        //             klass={"author-avatar"}
-        //             user={this.props.post.author}
-        //             follow={this.props.follow}
-        //             unfollow={this.props.unfollow}
-        //             currentUser={currentUser}
-        //         />
-        // } else {
-        //     photoUrl = <img className="author-avatar" src={window.brentURL}></img>
-        // }
+            photoUrl = 
+                <Avatar 
+                    photoUrl={this.props.post.author.photoUrl} 
+                    klass={"author-avatar"}
+                    user={this.props.post.author}
+                    follow={this.props.follow}
+                    unfollow={this.props.unfollow}
+                    currentUser={currentUser}
+                />
+        } else {
+            photoUrl = <img className="author-avatar" src={window.defaultAvatar}></img>
+        }
 
         let likeBtn = !post.likers.includes(currentUser.id) ? 
         (<button className="like-btn" onClick={() => this.props.likePost(post.id, currentUser.id)}>
@@ -153,24 +156,31 @@ class PostIndexItem extends React.Component {
                 )
             };
 
+        if (likers > 0) {
+            likes = (
+                <div className="">
+                    <p className="note">{`${likers} ${likers === 1 ? "like" : "likes"}`}</p>
+                </div>
+            )
+        } 
+
         return (
             <div className="post-index-item-container">
-                {/* {photoUrl} */}
+                {photoUrl}
                 <div className="post-container">
                     <div className="post-author-container">
-                        {/* < UserMini
+                        < UserMini
                             follow={this.props.follow}
                             unfollow={this.props.unfollow}
                             currentUser={this.props.currentUser}
                             otherUser={author}
-                        /> {reblogSymbol} {originalAuthor} */}
-                        Mini popup
+                        />
                     </div>
                     <div className="post-body-container">
                         {this.postBody(post)}
                     </div>
                     <div className="post-action-container">
-                        {/* {notes} */} Notes here
+                        {likes}
                         <ul className="post-action-actions">
                             {settings} 
                         </ul>

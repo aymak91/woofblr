@@ -1,0 +1,37 @@
+.user-hover {
+    display: inline-block;
+}
+
+.user-hover > p {
+    cursor: pointer;
+}
+
+.user-hover-dropdown {
+    display: none;
+}
+
+.user-hover:hover .user-hover-dropdown {
+    display: block;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    animation: 1s ease 0s normal forwards 1 fadein;
+    -webkit-animation: 1s ease 0s normal forwards 1 fadein;
+    z-index: 90000;
+
+}
+
+@keyframes fadein{from{opacity:0}
+to{opacity:1}
+}
+
+@-webkit-keyframes fadein{from{opacity:0}
+to{opacity:1}
+}
+
+
+// .user-dropdown-top {
+//     background-color: black;
+//     border-radius: 3px 3px 0 0;
+// }

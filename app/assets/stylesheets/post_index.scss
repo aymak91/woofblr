@@ -1,11 +1,18 @@
 .posts-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .post-nav-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    padding-left: 300px;
+    padding-top: 100px;
+}
+
+.avatar {
+    padding-right: 20px;
+    padding-bottom: 20px;
 }

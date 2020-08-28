@@ -28,12 +28,16 @@ class Navbar extends React.Component {
                 <li className="account">                        
                     <p className="small fas fa-user"></p>
                     <ul className="account-dropdown">
+                        <span>{currentUser.username}</span>
+
                         <li>
-                            <span>{currentUser.username}</span>
-                            <span className="small fas fa-heart" onClick={() => deleteSession()}>Logout</span>
+                            <Link to="/"><span>Home</span></Link>
                         </li>
                         <li>
-                            <Link to="/likes">LIKE<span>Likes</span></Link>
+                            <Link to="/likes"><span>Likes</span></Link>
+                        </li>
+                        <li>
+                            <Link className="" onClick={() => deleteSession()}>Logout</Link>
                         </li>
                         {/* <li>
                             <Link to="/following">FOLLOWING<span>Following</span></Link>

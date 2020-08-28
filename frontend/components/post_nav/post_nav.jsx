@@ -1,9 +1,8 @@
 import React from 'react';
 
-const PostNav = ({ currentUser, openModal }) => {
-
+const PostNav = ({ avatar, openModal }) => {
     return (
-        <>
+        <div>
             <ul className="post_buttons">
                 <li onClick={() => openModal('Create Text Form')}>
                     <div><p className="post_button text">Aa</p><span>Text</span></div>
@@ -18,7 +17,7 @@ const PostNav = ({ currentUser, openModal }) => {
                     <div><i className="post_button fas fa-link"></i><span>Link</span></div>
                 </li>
             </ul>
-        </>
+        </div>
     )
 }
 
