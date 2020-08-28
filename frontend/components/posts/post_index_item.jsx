@@ -65,18 +65,18 @@ class PostIndexItem extends React.Component {
                 return (
                     <button onClick={() => this.props.openModal('Edit Text Form', post.id)}>Edit</button>
                 )
-            // case "photo":
-            //     return (
-            //         <button onClick={() => this.props.openModal('Edit Photo Form', post.id)}>Edit</button>
-            //     )
-            // case "quote":
-            //     return (
-            //         <button onClick={() => this.props.openModal('Edit Quote Form', post.id)}>Edit</button>
-            //     )
-            // case "link":
-            //     return (
-            //         <button onClick={() => this.props.openModal('Edit Link Form', post.id)}>Edit</button>
-            //     )
+            case "photo":
+                return (
+                    <button onClick={() => this.props.openModal('Edit Photo Form', post.id)}>Edit</button>
+                )
+            case "quote":
+                return (
+                    <button onClick={() => this.props.openModal('Edit Quote Form', post.id)}>Edit</button>
+                )
+            case "link":
+                return (
+                    <button onClick={() => this.props.openModal('Edit Link Form', post.id)}>Edit</button>
+                )
         }
     }
 
@@ -117,6 +117,14 @@ class PostIndexItem extends React.Component {
         //     photoUrl = <img className="author-avatar" src={window.brentURL}></img>
         // }
 
+        let likeBtn = !post.likers.includes(currentUser.id) ? 
+        (<button className="like-btn" onClick={() => this.props.likePost(post.id, currentUser.id)}>
+            <i className="fas fa-heart unclicked post-index-like"></i>
+        </button>)
+        :
+        (<button onClick={() => this.props.unlikePost(post.id)}>
+            <i className="fas fa-heart clicked post-index-like"></i>
+        </button>) ;
 
         let settings;
         if (this.props.currentUser.id === this.props.authorId) {
@@ -128,7 +136,7 @@ class PostIndexItem extends React.Component {
 
                     {this.state.showMenu
                         ? (
-                            <div className="settings-dropdown">
+                            <div className="settings-dropdown" ref={(element) => { this.dropdownMenu = element }}>
                                 {this.postSetting(post)}
                                 <button onClick={() => this.props.deletePost(post.id)}>Delete</button>
                             </div>
@@ -140,7 +148,7 @@ class PostIndexItem extends React.Component {
         } else {
             settings = (
                 <li>
-                    {/* {likeBtn} */} Like Button
+                    {likeBtn}
                 </li>
                 )
             };

@@ -26,16 +26,16 @@ class Navbar extends React.Component {
                     <Link to="/">HOME BUTTON</Link>
                 </li> */}
                 <li className="account">                        
-                    <p className="small fas fa-heart">ACCOUNT</p>
+                    <p className="small fas fa-user"></p>
                     <ul className="account-dropdown">
                         <li>
                             <span>{currentUser.username}</span>
                             <span className="small fas fa-heart" onClick={() => deleteSession()}>Logout</span>
                         </li>
-                        {/* <li>
+                        <li>
                             <Link to="/likes">LIKE<span>Likes</span></Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="/following">FOLLOWING<span>Following</span></Link>
                         </li> */}
                     </ul>
@@ -45,17 +45,15 @@ class Navbar extends React.Component {
     
         if (currentUser) {
             return (
-                <nav>
-                    {/* {logo} */}
-                    <span className="small fas fa-heart" onClick={() => deleteSession()}>Logout</span>
-
+                <nav className="navbar navbar-user">
+                <Link to="/" className="paw-logo"><i klass="fas fa-paw"></i></Link>
                     {rightNav}
                 </nav>
             )
         } else {    
             return(
                 <div>
-                    {/* {logo} */}
+                <Link to="/" className="paw-logo"><i klass="fas fa-paw"></i></Link>
                 </div>
             )
         }

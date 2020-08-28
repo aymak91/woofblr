@@ -8,11 +8,11 @@ import CreatePostContainer from '../posts/create_post_form_container';
 // import CreatePostModalContainer from '../navbar/create_post_modal_container';
 import EditPostContainer from '../posts/edit_post_form_container';
 import CreatePhotoPostContainer from '../posts/create_photo_form_container';
-// import EditPhotoPostContainer from '../posts/edit_photo_form_container';
+import EditPhotoPostContainer from '../posts/edit_photo_form_container';
 import CreateQuoteContainer from '../posts/create_quote_form_container';
-// import EditQuoteContainer from '../posts/edit_quote_form_container';
+import EditQuoteContainer from '../posts/edit_quote_form_container';
 import CreateLinkContainer from '../posts/create_link_form_container';
-// import EditLinkContainer from '../posts/edit_link_form_container';
+import EditLinkContainer from '../posts/edit_link_form_container';
 // import CreateReblogContainer from '../posts/reblog_container';
 
 
@@ -34,21 +34,21 @@ const Modal = ({modal, closeModal}) => {
         case 'Create Photo Form':
             component = <CreatePhotoPostContainer />
             break;
-        // case 'Edit Photo Form':
-        //     component = <EditPhotoPostContainer postId={modal.postId} />
-        //     break;
+        case 'Edit Photo Form':
+            component = <EditPhotoPostContainer postId={modal.postId} />
+            break;
         case 'Create Quote Form':
             component = <CreateQuoteContainer postType="quote" />;
             break;
-        // case 'Edit Quote Form':
-        //     component = <EditQuoteContainer postId={modal.postId}/>;
-        //     break;
+        case 'Edit Quote Form':
+            component = <EditQuoteContainer postId={modal.postId}/>;
+            break;
         case 'Create Link Form':
             component = <CreateLinkContainer />
             break;
-        // case 'Edit Link Form':
-        //     component = <EditLinkContainer postId={modal.postId}/>;
-        //     break;
+        case 'Edit Link Form':
+            component = <EditLinkContainer postId={modal.postId}/>;
+            break;
         // case 'alt-create-post':
         //     component = <CreatePostModalContainer />
         //     return (

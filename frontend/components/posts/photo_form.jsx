@@ -44,7 +44,6 @@ class PhotoForm extends React.Component {
         } 
         else if (this.props.formType === "Save") {
             if (this.state.content) formData.append('post[content]', this.state.content);
-            if (this.state.reblog_description) formData.append('post[reblog_description]', this.state.reblog_description);
             this.props.action(formData, this.state.post).then(this.props.closeModal());
         }
     }
@@ -56,8 +55,6 @@ class PhotoForm extends React.Component {
                     ( <img className="image-prev" src={this.state.photoUrl} /> ) :
                 this.props.post.photoUrl ?
                     (<img className="image-prev" src={this.props.post.photoUrl} />) :
-                this.props.originalPost && this.props.originalPost.photoUrl ?
-                    (<img className="image-prev" src={this.props.originalPost.photoUrl} />) :
                 ( <div>
                     <input className="upload"
                     type="file"
@@ -81,7 +78,7 @@ class PhotoForm extends React.Component {
                     type="text"
                     value={this.state.content}
                     onChange={this.handleInput("content")}
-                    placeholder="Add a caption, if you like"
+                    placeholder="Add a caption (optional)"
                 />
             )
 

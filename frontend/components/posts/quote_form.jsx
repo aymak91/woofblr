@@ -21,40 +21,23 @@ class QuoteForm extends React.Component {
 
     render() {
         let inputContent;
-        if (this.props.post.reblog_post_id) {
-            
-            inputContent = (
-                <>
-                    <p className="quote-text">{this.props.post.title}</p>
-                    <p className="content-text">{this.props.post.content}</p>
+        inputContent = (
+            <div>
+                <textarea className="quote-text"
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.handleInput("title")}
+                    placeholder='"Quote"'
+                />
 
-                    <textarea className="content-text"
-                        type="text"
-                        value={this.state.reblog_description}
-                        onChange={this.handleInput("reblog_description")}
-                        placeholder="Add a caption, if you like"
-                    />
-                </>
-            )
-        } else {
-            inputContent = (
-                <>
-                    <textarea className="quote-text"
-                        type="text"
-                        value={this.state.title}
-                        onChange={this.handleInput("title")}
-                        placeholder="&ldquo;Quote&rdquo;"
-                    />
-
-                    <textarea className="content-text"
-                        type="text"
-                        value={this.state.content}
-                        onChange={this.handleInput("content")}
-                        placeholder="Source"
-                    />
-                </>
-            )
-        }
+                <textarea className="content-text"
+                    type="text"
+                    value={this.state.content}
+                    onChange={this.handleInput("content")}
+                    placeholder="Source"
+                />
+            </div>
+        )
 
         return (
             <div className="form_container">

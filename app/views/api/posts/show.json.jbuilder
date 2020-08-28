@@ -4,3 +4,4 @@ json.post do
         json.photoUrl url_for(@post.photo)
     end
 end
+

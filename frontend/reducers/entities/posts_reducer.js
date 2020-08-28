@@ -4,10 +4,10 @@ import {
     REMOVE_POST 
 } from '../../actions/entities/post_actions';
 
-// import {
-//     RECEIVE_LIKE,
-//     REMOVE_LIKE
-// } from '../../actions/entities/like_actions';
+import {
+    RECEIVE_LIKE,
+    REMOVE_LIKE
+} from '../../actions/entities/like_actions';
 
 // import {
 //     RECEIVE_COMMENT
@@ -17,7 +17,7 @@ import { merge } from 'lodash';
 
 const postsReducer = (oldState = {}, action) => {
     let newState = merge({}, oldState);
-    // let liker;
+    let liker;
     let post;
     Object.freeze(oldState);
     switch (action.type) {
@@ -28,21 +28,17 @@ const postsReducer = (oldState = {}, action) => {
         case REMOVE_POST:
             delete newState[action.postId];
             return newState;
-        // case RECEIVE_LIKE:
-        //     liker = action.like.user_id;
-        //     post = action.like.post_id;
-        //     newState[post].likers.push(liker);
-        //     return newState;
-        // case REMOVE_LIKE:
-        //     liker = action.like.user_id;
-        //     post = action.like.post_id;
-        //     const index = newState[post].likers.indexOf(liker);
-        //     newState[post].likers.splice(index);
-        //     return newState;
-        // case RECEIVE_COMMENT:
-        //     post = action.comment.post_id;
-        //     newState[post].comments.push({body: action.comment.body, author_id: action.comment.author_id})
-        //     return newState;
+        case RECEIVE_LIKE:
+            liker = action.like.user_id;
+            post = action.like.post_id;
+            newState[post].likers.push(liker);
+            return newState;
+        case REMOVE_LIKE:
+            liker = action.like.user_id;
+            post = action.like.post_id;
+            const index = newState[post].likers.indexOf(liker);
+            newState[post].likers.splice(index);
+            return newState;
         default:
             return oldState;
     }

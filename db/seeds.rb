@@ -10,9 +10,8 @@ require 'open-uri'
 
 User.destroy_all
 Post.destroy_all
-# Follow.delete_all
-# Like.delete_all
-# Comment.delete_all
+Follow.destroy_all
+Like.destroy_all
 
 demo = User.create(username: 'demoDoge', email: 'demo@woof.com', password: "password")
 user1 = User.create(username: 'lotushowls', email: 'lotus@woof.com', password: "password")
@@ -32,5 +31,11 @@ post4 = Post.create(title: '', content: 'Doge coin mining!', post_type: 'photo',
 # post6 =
 # post7 =
 
+like1 = Like.create(user: demo, post: post4)
+like2 = Like.create(user: user1, post: post2)
+
 doge_mining = open('https://woofblr-dev.s3-us-west-1.amazonaws.com/doge-mining.gif')
 post4.photo.attach(io: doge_mining, filename: 'doge-mining.gif')
+
+follow1 = Follow.create(following_id: demo.id, follower_id: user1.id) #use1 follows demo
+follow2 = Follow.create(following_id: user2.id, follower_id: demo.id) #use1 follows demo

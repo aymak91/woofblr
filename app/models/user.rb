@@ -21,6 +21,26 @@ class User < ApplicationRecord
         class_name: :Post
 
     has_one_attached :avatar
+
+    has_many :likes,
+        foreign_key: :user_id,
+        class_name: :Like
+
+    has_many :follower_joins,
+        foreign_key: :following_id,
+        class_name: :Follow
+    
+    has_many :following_joins,
+        foreign_key: :follower_id,
+        class_name: :Follow
+
+    has_many :followers,
+        through: :follower_joins,
+        source: :follower
+
+    has_many :followings,
+        through: :following_joins,
+        source: :following
     
     attr_reader :password
     after_initialize :ensure_session_token
