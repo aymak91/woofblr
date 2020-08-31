@@ -32,8 +32,6 @@
     font-size: 14px;
 }
 
-/* avatar */
-
 .post-avatar {
     position: sticky;
     width: 64px;
@@ -63,16 +61,10 @@
     margin-bottom: 20px;
 }
 
-.user-popup {
-    display: none;
-    position: absolute;
-}
-
 .dashboard-side {
     position: relative;
     width: 320px;
     height: 400px;
-    // margin: 0 auto;
 }
 
 .recommended-blogs {
@@ -135,21 +127,3 @@
     font-size: 24px;
     color: white;
 }
-
-.fa-plus-square:hover {
-    color: rgb(90, 160, 204);
-}
-
-.dashboard-side > .about-me {
-    position: fixed;
-    right: auto;
-    margin: 10px 45px;
-    display: block;
-    text-align: center;
-    
-}
-
-.empty-space {
-    width: 10%;
-}
-
