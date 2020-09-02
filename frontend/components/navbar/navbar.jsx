@@ -37,7 +37,7 @@ class Navbar extends React.Component {
                             <Link to="/likes"><span>Likes</span></Link>
                         </li>
                         <li>
-                            <Link className="" onClick={() => deleteSession()}>Logout</Link>
+                            <span className="" onClick={() => deleteSession()}>Logout</span>
                         </li>
                         {/* <li>
                             <Link to="/following">FOLLOWING<span>Following</span></Link>

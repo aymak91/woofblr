@@ -40,6 +40,7 @@ class LikesIndex extends React.Component {
                         {posts}
                     </ul>
                 </div>
+                {console.log(this.props)}
             </div>
         )
     }
