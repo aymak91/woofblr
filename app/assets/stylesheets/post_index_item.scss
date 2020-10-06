@@ -147,6 +147,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    list-style-type: none;
 }
 
 .post-action-container > .post-action-actions > li > * {
@@ -192,4 +193,13 @@
 
 .fa-retweet {
     padding: 1px 1px 2px;
+}
+
+// .like-btn {
+//     border: none;
+// }
+
+button {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
 }

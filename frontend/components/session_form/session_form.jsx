@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
             username: "demoDoge"}
 
         let { email, password } = demoUser;
-        let interval = 150;
+        let interval = 100;
         let login = () => {
             this.props.createSession(this.state);
             this.props.history.push("/")
@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li class="errors" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}

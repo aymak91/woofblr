@@ -1,7 +1,14 @@
 .dashboard {
     display: flex;
-    flex-direction: row;
-    padding-left: 200px;
+    flex-direction: row center;
+    padding-left: 30%;
+    padding-right: 30%;
+    // position: absolute;
+    // left: 50%;
+    // right: 50%;
+    // margin-right: -50%;
+    // transform: translate(-50%, -50%);
+
 }
 
 .main {

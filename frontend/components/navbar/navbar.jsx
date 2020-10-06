@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Avatar from '../avatar/avatar'
+
 
 // const Navbar = ({currentUser, deleteSession}) => {
 
@@ -18,7 +20,16 @@ class Navbar extends React.Component {
 
     render() {
         const {currentUser, deleteSession} = this.props;
-        
+        // let avatar;
+        // if (currentUser.photoUrl) {
+        //     avatar = <Avatar
+        //         klass={"post-avatar"}
+        //         photoUrl={photoUrl}
+        //         user={currentUser}
+        //         currentUser={currentUser}
+        //     />
+        // } 
+
         const rightNav = (
 
             <ul className="nav-list">
@@ -28,7 +39,7 @@ class Navbar extends React.Component {
                 <li className="account">                        
                     <p className="small fas fa-user"></p>
                     <ul className="account-dropdown">
-                        <span>{currentUser.username}</span>
+                        <span>Welcome, {currentUser.username}!</span>
 
                         <li>
                             <Link to="/"><span>Home</span></Link>
@@ -37,7 +48,7 @@ class Navbar extends React.Component {
                             <Link to="/likes"><span>Likes</span></Link>
                         </li>
                         <li>
-                            <span className="" onClick={() => deleteSession()}>Logout</span>
+                            <Link><span className="" onClick={() => deleteSession()}>Logout</span></Link>
                         </li>
                         {/* <li>
                             <Link to="/following">FOLLOWING<span>Following</span></Link>
