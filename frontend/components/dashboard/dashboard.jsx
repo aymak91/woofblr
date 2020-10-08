@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import PostIndexContainer from '../posts/post_index_container';
 import NavbarContainer from '../navbar/navbar_container';
 import PostNavContainer from '../post_nav/post_nav_container';
-import Modal from '../modal/modal'
-import Avatar from '../avatar/avatar'
+import Modal from '../modal/modal';
+import Avatar from '../avatar/avatar';
+import AboutMe from './about_me';
 
 
 class Dashboard extends React.Component {
@@ -60,14 +61,14 @@ class Dashboard extends React.Component {
             <div className="main">
                 <NavbarContainer />
                 <div><Modal /></div>
-                <div className="post-nav-container">
+                <section className="post-nav-container">
                     <div className="avatar">
                         {avatar}
                     </div>
                     <PostNavContainer 
                     />
-                </div>                
-                <div className="dashboard">
+                </section>                
+                <section className="dashboard">
                     <div>
                         <PostIndexContainer />
                     </div>
@@ -76,7 +77,10 @@ class Dashboard extends React.Component {
                             {recommended}
                         </ul>
                     </div>
-                </div>
+                </section>
+                <section class='about'>
+                    <AboutMe />
+                </section>
             </div>
         );
     }

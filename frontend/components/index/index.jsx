@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AboutMe from '../dashboard/about_me';
 
 class Index extends React.Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class Index extends React.Component {
                         <Link className="login" to='/login'>Log In</Link>
                     </nav>
                 </div>
+                <AboutMe />
             </div>
         );
     }
