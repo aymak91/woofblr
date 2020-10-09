@@ -1,0 +1,52 @@
+.explore-container {
+    position: relative;
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.explore-posts {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    height: 1200px;
+}
+
+.explore-index-item-container {
+    align-self: flex-start;
+    background-color: white;
+    width: 300px;
+    border-radius: 3px;
+    margin: 10px;
+    
+}
+
+.explore.post-author-container {
+    padding: 10px 8px 5px 8px;
+}
+
+.explore-reblog-author {
+    font-size: 12px;
+    color: gray;
+}
+
+.explore.post-action-container{
+    padding: 5px 10px;
+}
+
+.explore.post-action-actions > li > * {
+    font-size: 22px;
+}
+
+.explore.notes {
+    font-size: 16px
+}
+
+.explore.quote-post > h3 {
+    font-size: 25px;
+}
+
+.explore.text-post > h3 {
+    font-size: 25px;
+}

@@ -86,6 +86,7 @@ class SessionForm extends React.Component {
 
         let usernameField;
         let userLink;
+        let demoLogin;
 
         if (this.props.formType === "Sign Up") {
             
@@ -102,6 +103,14 @@ class SessionForm extends React.Component {
             usernameField = (<span></span>)
             userLink = (<Link className="link" to='/signup'>Sign up</Link>)
         };
+
+        if (this.props.formType === "Sign Up") {
+            demoLogin = (<span></span>)
+        } else {
+            demoLogin = (
+                <button className="submit" onClick={this.handleDemo}>Demo Login</button>
+            )
+        }
 
 
         return (
@@ -133,7 +142,7 @@ class SessionForm extends React.Component {
                         
                         <div className="buttons">
                             <input className="submit" type="submit" value={this.props.formType} />
-                            <button className="submit" onClick={this.handleDemo}>Demo Login</button>
+                            {demoLogin}
                         </div>
                     </form>
                 </div>

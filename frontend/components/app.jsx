@@ -7,6 +7,7 @@ import DashboardContainer from './dashboard/dashboard_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_utils';
 import LikesIndexContainer from './likes/likes_index_container';
 import FollowingIndexContainer from './following/following_index_container';
+import ExplorerContainer from './explorer/explorer_container';
 
 const App = () => {
     return(
@@ -16,6 +17,7 @@ const App = () => {
             <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
             <ProtectedRoute path="/likes" component={LikesIndexContainer} />
             <ProtectedRoute path="/following" component={FollowingIndexContainer} />
+            <ProtectedRoute path="/explorer" component={ExplorerContainer} />
             <AuthRoute path="/" component={IndexContainer}/>
         </Switch>
     )
