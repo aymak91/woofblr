@@ -10,6 +10,7 @@
     overflow: hidden;
     top: 0;
     align-items: center;
+    background-color: rgba(70, 131, 180, 0.5);
 }
 
 .nav-list {
@@ -75,4 +76,20 @@
     text-decoration: none;
     color: darkslategrey;
     font-size: 19px;
+}
+
+.big {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+.title-icon {
+    text-decoration: none;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    padding-left: 30px;
+    font-weight: bold;
 }

@@ -33,11 +33,18 @@ class Navbar extends React.Component {
         const rightNav = (
 
             <ul className="nav-list">
-                {/* <li>
-                    <Link to="/">HOME BUTTON</Link>
-                </li> */}
+                <li>
+                    <Link to="/">
+                        <i class='big fas fa-home'></i>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/explorer">
+                        <i className="big fas fa-compass"></i>
+                    </Link>
+                </li>
                 <li className="account">                        
-                    <p className="small fas fa-user"></p>
+                    <p className="big fas fa-user"></p>
                     <ul className="account-dropdown">
                         <span>Welcome, {currentUser.username}!</span>
 
@@ -61,14 +68,14 @@ class Navbar extends React.Component {
         if (currentUser) {
             return (
                 <nav className="navbar navbar-user">
-                <Link to="/" className="paw-logo"><i klass="fas fa-paw"></i></Link>
+                    <Link to="/" className="title-icon">woofblr</Link>
                     {rightNav}
                 </nav>
             )
         } else {    
             return(
                 <div>
-                <Link to="/" className="paw-logo"><i klass="fas fa-paw"></i></Link>
+                    <Link to="/" className="title-icon">woofblr</Link>
                 </div>
             )
         }
