@@ -127,4 +127,4 @@ post19.photo.attach(io: baby_girl, filename: 'baby-girl.jpg')
 
 follow1 = Follow.create(following_id: demo.id, follower_id: user1.id) #user1 follows demo
 follow2 = Follow.create(following_id: user2.id, follower_id: demo.id) 
-follow3 = Follow.create(following_id: user1.id, follower_id: demo.id) 
+follow3 = Follow.create(following_id: user1.id, follower_id: demo.id)

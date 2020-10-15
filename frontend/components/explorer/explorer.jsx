@@ -110,6 +110,7 @@ class Explorer extends React.Component {
         return (
             <div className="explorer">
                 <NavbarContainer />
+                <h1 className="explorer-title">Explorer</h1>
                 <div className="explore-container">
                     <ul className="col col-1">
                         {colOne}

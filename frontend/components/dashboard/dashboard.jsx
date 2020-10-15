@@ -72,11 +72,11 @@ class Dashboard extends React.Component {
                     <div>
                         <PostIndexContainer />
                     </div>
-                    <div className="dashboard-side">
+                    <section className="dashboard-side">
                         <ul className="recommended-blogs"> <p>Recommended Blogs</p>
                             {recommended}
                         </ul>
-                    </div>
+                    </section>
                 </section>
                 <section class='about'>
                     <AboutMe />

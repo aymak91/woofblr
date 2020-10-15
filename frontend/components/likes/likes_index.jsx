@@ -35,7 +35,8 @@ class LikesIndex extends React.Component {
         return (
             <div className="main">
                 <NavbarContainer />
-                <div className="main-content">
+                <h1 className="likes-title">Your Likes</h1>
+                <div className="dashboard">
                     <ul className="">
                         {posts}
                     </ul>
